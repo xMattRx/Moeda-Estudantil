@@ -1,25 +1,24 @@
 <?php
-
-require_once("/xampp/htdocs/php/controller/conexao.php");
-require_once("/xampp/htdocs/php/model/Vantagem.php");
-require_once("/xampp/htdocs/php/controller/vantagem_controller.php");
-
+require_once("../controller/conexao.php");
+require_once("../controller/vantagem_controller.php");
+require_once("../model/Vantagem.php");
 
 
-cadastrar_vantagem();
+if (isset($_POST['enviar'])) {
 
-function cadastrar_vantagem()
-{
-
-    if (isset($_POST['enviar'])) {
-
-        $vantagem = criarVantagem($_POST['enviar']);
-
-        if ($vantagem->getSetado() == true) {
-
+    $formatosPermitidos = array("png", "jpeg", "jpg", "gif");
+    $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+    if (in_array($extensao, $formatosPermitidos)) {
+        $pasta = "../../Assets/";
+        $temporario = $_FILES['foto']['tmp_name'];
+        $novoNome = uniqid() . ".$extensao"; //Vai para o insert do banco de dados
+        $vantagem = criarVantagem($novoNome);
+        if ($vantagem->getSetado()) {
             insertVantagem($vantagem);
         }
+        move_uploaded_file($temporario, $pasta . $novoNome);
         header("Refresh:0; url=../view/perfil_empresa_view.php");
-        exit;
+    } else {
+        echo "Formato inválido";
     }
 }

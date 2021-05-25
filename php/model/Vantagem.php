@@ -2,36 +2,27 @@
 
 class Vantagem
 {
-
-    private $id;
     private $custo_moedas;
+    private $foto;
     private $nome;
     private $descricao;
     private $cnpj_empresas;
 
-    public function __construct($custo_moedas, $nome, $descricao, $cnpj_empresas)
+    public function __construct($custo_moedas, $foto, $nome, $descricao, $cnpj_empresas)
     {
         $this->custo_moedas = $custo_moedas;
+        $this->foto = $foto;
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->cnpj_empresas = $cnpj_empresas;
         $this->setado = true;
     }
 
-    public function getId()
-    {
-        return $this->id;
-    }
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function getCusto_Moedas()
+    public function getMoedas()
     {
         return $this->custo_moedas;
     }
-    public function setCusto_Moedas($custo_moedas)
+    public function setMoedas($custo_moedas)
     {
         $this->custo_moedas = $custo_moedas;
     }
@@ -61,11 +52,11 @@ class Vantagem
     {
         $this->descricao = $descricao;
     }
-    public function getCNPJ_Empresa()
+    public function getCnpj()
     {
         return $this->cnpj_empresas;
     }
-    public function setCNPJ_Empresa($cnpj_empresas)
+    public function setCnpj($cnpj_empresas)
     {
         $this->cnpj_empresas = $cnpj_empresas;
     }
