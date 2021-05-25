@@ -1,0 +1,47 @@
+body {
+  background: black;
+}
+h1 {
+  color: white;
+  margin: 20px 0px;
+  cursor: default;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+table {
+  font-family: "Bebas Neue", cursive;
+  border-collapse: collapse;
+  width: 80%;
+  border: 1px solid white;
+}
+
+table td,
+table th {
+  border: 3px solid white;
+  padding: 8px;
+  cursor: default;
+}
+table td {
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: black;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(10, 231, 3);
+  color: white;
+}

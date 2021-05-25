@@ -1,0 +1,66 @@
+body {
+  background: rgb(10, 231, 3);
+}
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.quadro-cadastro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 30rem;
+  background-color: black;
+  border-radius: 10px;
+  padding: 2rem 2rem 0rem 2rem;
+  font-family: "Bebas Neue", cursive;
+  border: 4px solid white;
+  text-align: center;
+}
+.quadro-cadastro h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(10, 231, 3);
+}
+.quadro-cadastro h2:hover {
+  cursor: default;
+}
+.quadro-cadastro input {
+  margin: 5px auto;
+}
+.quadro-cadastro label {
+  line-height: 20px;
+}
+
+.quadro-cadastro input[type="text"],
+.quadro-cadastro input[type="password"],
+.quadro-cadastro input[type="text"]:hover {
+  display: block;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  background: black;
+  border-bottom: 1px solid rgb(10, 231, 3);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(10, 231, 3);
+}
+button {
+  width: auto;
+  font-size: 15px;
+  margin: 10px auto;
+  display: block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Bebas Neue", cursive;
+  background: black;
+}

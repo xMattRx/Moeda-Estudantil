@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+}
+.container {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  background-color: rgb(10, 231, 3);
+  border: 4px solid white;
+}
+ul li {
+  display: inline-block;
+}
+ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.perfil {
+  margin-top: 20px;
+}
+.perfil td {
+  padding: 10px;
+}
