@@ -17,7 +17,7 @@ if (isset($_POST['enviar'])) {
             insertVantagem($vantagem);
         }
         move_uploaded_file($temporario, $pasta . $novoNome);
-        header("Refresh:0; url=../view/perfil_empresa_view.php");
+        header("Refresh:0; url=../view/listagem_vantagens_view.php");
     } else {
         echo "Formato inválido";
     }

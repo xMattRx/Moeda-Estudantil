@@ -21,15 +21,18 @@ $linha_editar = $_POST['editar']; ?>
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/editar_empresa_controller.php" method="post">
-                <h2>Editar Empresas</h2>
-                <a href=""></a>
-                <label for="nome">Nome</label>
+            <form action="/php/controller/editar_vantagem_controller.php" method="post">
+                <h2>Editar Vantagem</h2>
+                <label for="moedas">Custo em moedas</label>
+                <input required name="moedas" id="moedas" type="number">
+                <label for="foto">Foto</label><br>
+                <input required name="foto" id="foto" type="file"><br>
+                <label for="nome">Nome</label><br>
                 <input required name="nome" id="nome" type="text">
-                <label for="cnpj">CNPJ</label>
-                <input name="cnpj" id="cnpj" type="number">
+                <label for="descricao">Descricao</label><br>
+                <input required name="descricao" id="descricao" type="text">
                 <input name="cadastrar_edicao" type="submit" value="editar">
-                <input style="display: none" name="edicao" value=<?php echo $_POST['editar']; ?>>
+                </input>
             </form>
         </div>
 
