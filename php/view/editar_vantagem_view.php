@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php global $linha_editar;
-$linha_editar = $_POST['editar']; ?>
+
+<?php
+session_start();
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +24,7 @@ $linha_editar = $_POST['editar']; ?>
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/editar_vantagem_controller.php" method="post">
+            <form action="/php/controller/editar_vantagem_controller.php" enctype="multipart/form-data" method="post">
                 <h2>Editar Vantagem</h2>
                 <label for="moedas">Custo em moedas</label>
                 <input required name="moedas" id="moedas" type="number">
@@ -31,8 +34,9 @@ $linha_editar = $_POST['editar']; ?>
                 <input required name="nome" id="nome" type="text">
                 <label for="descricao">Descricao</label><br>
                 <input required name="descricao" id="descricao" type="text">
+                <input type="text" name="cnpj" style="display:none" value="<?php echo $_SESSION['login'] ?> ">
+                <input style="display: none" name="id" type="text" value=<?php echo $_POST['editar'] ?>>
                 <input name="cadastrar_edicao" type="submit" value="editar">
-                </input>
             </form>
         </div>
 

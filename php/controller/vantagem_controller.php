@@ -32,6 +32,16 @@ function consultaVantagem($login)
     $vantagens = $result->fetchAll();
     return $vantagens;
 }
-function recuperarimagem($nome)
+function updateVantagem($vantagem, $id)
 {
+    global $conexao;
+    $moedas = $vantagem->getMoedas();
+    $foto = $vantagem->getFoto();
+    $nome = $vantagem->getNome();
+    $descricao = $vantagem->getDescricao();
+
+
+    $query = "UPDATE `vantagem` SET `CUSTO_MOEDAS` = '{$moedas}', `FOTO` = '{$foto}', `NOME` = '{$nome}', `DESCRICAO` = '{$descricao}' WHERE `vantagem`.`ID` = '{$id}'";
+    $conexao->exec($query);
+    header("Refresh:0; url=../view/perfil_empresa_view.php");
 }
