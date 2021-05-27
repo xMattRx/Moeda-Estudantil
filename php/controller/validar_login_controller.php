@@ -29,7 +29,7 @@ function validar_login()
                     $_SESSION['logado'] = true;
                     $_SESSION['login'] = $_POST['login'];
 
-                    header("Refresh:0; url=../view/menu_professor_view.php");
+                    header("Refresh:0; url=../view/perfil_professor_view.php");
                 } else {
 
                     $valida_empresa = E_empresa();
