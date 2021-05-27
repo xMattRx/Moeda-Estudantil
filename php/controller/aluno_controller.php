@@ -16,6 +16,20 @@ function criarAluno()
         return $aluno;
     }
 }
+function moedas()
+{
+    $alunos = consultaAluno();
+
+    for ($i = 0; $i < count($alunos); $i++) {
+        if ($alunos[$i]["LOGIN_USUARIO"] == $_SESSION['login']) {
+            if ($alunos[$i]["MOEDAS"] == null) {
+                echo "Moedas disponiveis: " . 0;
+            } else {
+                echo "Moedas disponiveis: " . $alunos[$i]["MOEDAS"];
+            }
+        }
+    }
+}
 
 function insertAluno($aluno)
 {
@@ -32,4 +46,34 @@ function consultaAluno()
     $result = $conexao->query($consulta) or die($conexao->error);
     $alunos = $result->fetchAll();
     return $alunos;
+}
+function mostrar_alunos()
+{
+    global $conexao;
+    $consulta = "SELECT ID_INSTITUICAO FROM aluno WHERE LOGIN_USUARIO = '{$_SESSION['login']}'";
+    $result = $conexao->query($consulta) or die($conexao->error);
+    $alunos = $result->fetchAll();
+
+
+    echo "<br>";
+    $consulta = "SELECT LOGIN_USUARIO FROM aluno WHERE ID_INSTITUICAO = '{$alunos[0]["ID_INSTITUICAO"]}'";
+    $result = $conexao->query($consulta) or die($conexao->error);
+    $alunos = $result->fetchAll();
+
+    $consulta = "SELECT * FROM usuario";
+    $result = $conexao->query($consulta) or die($conexao->error);
+    $alunos2 = $result->fetchAll();
+
+
+
+    for ($i = 0; $i < count($alunos); $i++) {
+
+        for ($j = 0; $j < count($alunos2); $j++) {
+
+            if ($alunos[$i]['LOGIN_USUARIO'] == $alunos2[$j]['LOGIN'] && $alunos2[$j]['LOGIN'] != $_SESSION['login']) {
+
+                echo "<option value='{$alunos2[$j]['LOGIN']}'>{$alunos2[$j]['NOME']}</option>";
+            }
+        }
+    }
 }

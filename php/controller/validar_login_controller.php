@@ -22,7 +22,7 @@ function validar_login()
                 $_SESSION['logado'] = true;
                 $_SESSION['login'] = $_POST['login'];
 
-                header("Refresh:0; url=../view/menu_aluno_view.php");
+                header("Refresh:0; url=../view/perfil_aluno_view.php");
             } else {
                 $valida_professor = E_professor();
                 if ($valida_professor == true) {

@@ -23,22 +23,29 @@ include("/xampp/htdocs/php/controller/professor_controller.php");
     <link rel="icon" type="image/png" href="/Assets/moeda.png" />
 </head>
 
-<body>
+<body style="color: #fff">
     <div class="container">
         <nav>
             <div class="menu">
                 <ul>
                     <li><a href="../view/perfil_professor_view.php">Perfil</a></li>
-                    <li><a href="../view/transferir_professor_aluno_controller.php">Transferir moedas para alunos</a></li>
+                    <li><a href="../view/transferir_professor_aluno_view.php">Transferir moedas para alunos</a></li>
                     <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
         <div class="perfil">
-            <?php
-            moedas();
-            ?>
-
+            <form method="post" action="../controller/transferir_professor_aluno_controller.php">
+                <label for="alunos">Alunos</label>
+                <select name="login" id="alunos">
+                    <?php
+                    mostrar_alunos();
+                    ?>
+                </select> <br><br>
+                <label for="moedas">Moedas</label>
+                <input name="moedas" id="moedas" type="number"> <br><br>
+                <input type="submit">
+            </form>
         </div>
 
     </div>
