@@ -1,7 +1,8 @@
 <?php
 require_once("/xampp/htdocs/php/controller/conexao.php");
 session_start();
-include("/xampp/htdocs/php/controller/professor_controller.php");
+include("/xampp/htdocs/php/controller/aluno_controller.php");
+include("/xampp/htdocs/php/controller/trocar_por_vantagens_controller.php")
 
 
 ?>
@@ -28,17 +29,23 @@ include("/xampp/htdocs/php/controller/professor_controller.php");
         <nav>
             <div class="menu">
                 <ul>
-                    <li><a href="../view/perfil_professor_view.php">Perfil</a></li>
-                    <li><a href="../view/transferir_professor_aluno_view.php">Transferir moedas para alunos</a></li>
+                    <li><a href="../view/perfil_aluno_view.php">Perfil</a></li>
+                    <li><a href="../view/transferir_aluno_aluno_view.php">Transferir moedas para colegas</a></li>
+                    <li><a href="../view/trocar_por_vantagens_view.php">Trocar moedas por vantagens</a></li>
                     <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
         <div class="perfil">
             <?php
-            moedas();
+            moedas_aluno();
             ?>
+        </div>
+        <div class="vantagens">
+            <?php
+            listar_vantagens();
 
+            ?>
         </div>
 
     </div>

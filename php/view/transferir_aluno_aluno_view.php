@@ -30,6 +30,7 @@ include("/xampp/htdocs/php/controller/aluno_controller.php");
                 <ul>
                     <li><a href="../view/perfil_aluno_view.php">Perfil</a></li>
                     <li><a href="../view/transferir_aluno_aluno_view.php">Transferir moedas para colegas</a></li>
+                    <li><a href="../view/trocar_por_vantagens_view.php">Trocar moedas por vantagens</a></li>
                     <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -39,7 +40,7 @@ include("/xampp/htdocs/php/controller/aluno_controller.php");
                 <label for="alunos">Alunos</label>
                 <select name="login" id="alunos">
                     <?php
-                    mostrar_alunos();
+                    mostrar_aluno_alunos();
                     ?>
                 </select> <br><br>
                 <label for="moedas">Moedas</label>

@@ -29,3 +29,16 @@ ul li a {
 .perfil td {
   padding: 10px;
 }
+.vantagens {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.vantagem {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+}

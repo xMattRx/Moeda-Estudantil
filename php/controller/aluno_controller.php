@@ -16,7 +16,7 @@ function criarAluno()
         return $aluno;
     }
 }
-function moedas()
+function moedas_aluno()
 {
     $alunos = consultaAluno();
 
@@ -47,7 +47,7 @@ function consultaAluno()
     $alunos = $result->fetchAll();
     return $alunos;
 }
-function mostrar_alunos()
+function mostrar_aluno_alunos()
 {
     global $conexao;
     $consulta = "SELECT ID_INSTITUICAO FROM aluno WHERE LOGIN_USUARIO = '{$_SESSION['login']}'";
